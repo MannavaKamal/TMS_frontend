@@ -1,5 +1,5 @@
 const config = 
 {
-    "url":"http://localhost:5000"
+    "url":"https://tms-backend-lal4.onrender.com"
 }
 export default config;
