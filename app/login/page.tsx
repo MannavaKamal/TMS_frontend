@@ -26,7 +26,7 @@ export default function LoginPage() {
       localStorage.setItem("name",udata.name);
       localStorage.setItem("email",udata.email)
       localStorage.setItem("image",udata.image)
-      router.push("/tasks");
+      router.push("/");
     }
    else{
     alert("credentials are invalid")
