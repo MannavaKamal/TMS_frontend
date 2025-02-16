@@ -27,7 +27,7 @@ export default function RegisterPage() {
     })
     if(res.data.code === 1){
       alert("Successfully registered")
-      router.push("/tasks");
+      router.push("/login");
     }
     
   };
