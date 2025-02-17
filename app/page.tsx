@@ -112,10 +112,11 @@ export default function TaskPage() {
     await axios.delete(`${config.url}/tasks/${id}/${tindex}`)
   }
 
-  const handleCompleteTask = (tindex: number) => {
+  const handleCompleteTask = async(tindex: number) => {
     setTasks(
       tasks.map((task,index) => (index === tindex ? { ...task, completed: !task.completed, updatedAt: new Date() } : task)),
     )
+    await axios.patch(`${config.url}/tasks/${id}/${tindex}/complete`);
   }
 
   const filteredTasks = tasks.filter((task) => {
