@@ -112,9 +112,9 @@ export default function TaskPage() {
     await axios.delete(`${config.url}/tasks/${id}/${tindex}`)
   }
 
-  const handleCompleteTask = (id: number) => {
+  const handleCompleteTask = (tindex: number) => {
     setTasks(
-      tasks.map((task) => (task.id === id ? { ...task, completed: !task.completed, updatedAt: new Date() } : task)),
+      tasks.map((task,index) => (index === tindex ? { ...task, completed: !task.completed, updatedAt: new Date() } : task)),
     )
   }
 
@@ -233,7 +233,7 @@ export default function TaskPage() {
                       <MdEdit />
                     </Button>
                     <Button
-                      onClick={() => handleCompleteTask(task.id)}
+                      onClick={() => handleCompleteTask(index)}
                       className={`${
                         task.completed ? "bg-yellow-500 hover:bg-yellow-600" : "bg-green-500 hover:bg-green-600"
                       } text-white p-2 rounded-full transition duration-300`}
